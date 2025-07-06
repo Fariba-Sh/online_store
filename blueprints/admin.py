@@ -32,10 +32,10 @@ def login():
 
 @app.route('/admin/dashboard' , methods = ["GET"])
 def dashboard_admin():
-    return "this is your dashboard"
+    return render_template("admin/dashboard.html")
 
 
 
 @app.route('/admin/dashboard/products' , methods = ["GET"])
 def products_admin():
-    return "this is your product page"
+    return render_template("admin/products.html")
