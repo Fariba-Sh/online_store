@@ -4,6 +4,15 @@ import config
 
 app = Blueprint("admin", __name__)
 
+
+@app.before_request
+def before_request():
+       if session.get('admin_login' , None) == None and request.endpoint != "admin.login" :
+        abort(403)
+        # abort 403 :forbiden
+
+
+
 @app.route('/admin' , methods = ["POST" , "GET"])
 def login():
     if request.method == "POST":
@@ -22,8 +31,11 @@ def login():
 
 
 @app.route('/admin/dashboard' , methods = ["GET"])
-def dashboard1():
-    if session.get('admin_login' , None) == None:
-        abort(403)
-        # abort 403 :forbiden
+def dashboard_admin():
     return "this is your dashboard"
+
+
+
+@app.route('/admin/dashboard/products' , methods = ["GET"])
+def products_admin():
+    return "this is your product page"
