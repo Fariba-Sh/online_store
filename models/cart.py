@@ -1,11 +1,13 @@
 from sqlalchemy import *
 from extentions import db
+from sqlalchemy.orm import backref
 
 class Cart(db.Model):
     __tablename__ = "carts"
     id = Column(Integer, primary_key=True)
     status = Column(String, default="pending")
-    user_id = Column(Integer, ForeignKey('users.id', nullable = False))
+    user_id = Column(Integer, ForeignKey('users.id'), nullable = False)
     # usersهمون اسم جدوله!
-    user = db.relationship('User', backref = 'carts')
+    user = db.relationship('User', backref = backref ('carts', lazy= 'dynamic'))
     # ارتباط یک به چند( هر کاربر چند سبد خرید میتونه داشته باشه)
+    # lazy = 'dynamic' returns as query

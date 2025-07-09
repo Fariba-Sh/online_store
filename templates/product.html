@@ -11,4 +11,9 @@
     {{ product.id }}<br>
     {{ product.price }}
 
+    <form method="get" action="/add-to-cart">
+        <input type="hidden" name="product_id" value="{{ product.id }}">
+        <input type="submit" value="اضافه کردن به سبد خرید">
+        <!-- اگر لینک رو برای کسی بفرستیم بلافاصله به سبد خریدش اضافه میشه-->
+    </form>>
 {% endblock %}
