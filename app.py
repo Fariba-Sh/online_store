@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf.csrf import CSRFProtect
 from blueprints.general import app as general
@@ -28,6 +28,14 @@ login_manager.init_app(app)
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(user_id)
+
+
+@login_manager.unauthorized_handler
+def unauthorized():
+    
+    return redirect(url_for('user.login'))
+
+
 
 with app.app_context():
     extentions.db.create_all()
