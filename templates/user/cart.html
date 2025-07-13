@@ -6,10 +6,17 @@
 
 {% block body %}
 
-    {% for cart_item in (current_user.carts|selectattr('status','equalto','pending')|list|first).cart_items %}
-    
-    {{cart_item.product.name}} <br> {{cart_item.quantity}} , {{ cart_item.product.price }}
+    {% set cart = current_user.carts|selectattr('status','equalto','pending')|list %}
 
-    {% endfor %}
+    {% if cart|length > 0 %}
+        {% for cart_item in (cart|first).cart_items %}
+    
+            {{cart_item.product.name}} <br> {{cart_item.quantity}} , {{ cart_item.product.price }}
+            <form action="/remove-from-cart" method="get">
+                <input type="hidden" name="id" value="{{ cart_item.id }}">
+                <input type="submit" value="حذف از سبد خرید">
+            </form>
+        {% endfor %}
+    {% endif %}
 {% endblock %}
 
