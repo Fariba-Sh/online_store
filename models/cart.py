@@ -11,3 +11,12 @@ class Cart(db.Model):
     user = db.relationship('User', backref = backref ('carts', lazy= 'dynamic'))
     # ارتباط یک به چند( هر کاربر چند سبد خرید میتونه داشته باشه)
     # lazy = 'dynamic' returns as query
+
+
+    def total_price(self):
+        total = 0
+        for item in self.cart_items:
+            t = item.price * item.quantity
+            total += t
+        return total
+    
