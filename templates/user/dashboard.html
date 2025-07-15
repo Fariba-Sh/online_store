@@ -8,8 +8,8 @@
 
    
     {% for cart in current_user.carts|selectattr('status','!=','pending') %}
-         <a href="{{url_for('user.view_order', id = cart.id)}}"> {{cart.cart_items[0].product.name}} --
-        {{ cart.status }}</a>
+         <a href="{{url_for('user.view_order', id = cart.id)}}"> {{cart.cart_items[0].product.name}}
+        {{ cart.get_status_persian() }}<br></a>
     {% endfor %}
         
 {% endblock %}
