@@ -1,0 +1,142 @@
+@font-face {
+  font-family: 'b koodak';
+  src: url('../fonts/BKoodakBold.eot?#') format('eot'),  /* IE6–8 */
+       url('../fonts/BKoodakBold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('../fonts/BKoodakBold.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    background: #fafafa ;
+    color: rgb(55, 55, 55);
+    font-family: b koodak ;
+}
+
+header{
+    width: 100%;
+    text-align: center;
+}
+
+header img{
+    max-width: 200px;
+    height: inherit;
+    float: left;
+}
+header > section{
+    width: 100%;
+    max-width: 700px;
+    height: 50px;
+    padding: 10px 20px;
+    margin: 30px auto auto;
+    
+    border: 2px solid rgb(133, 131, 131);
+    border-radius: 10px;
+
+}
+
+
+header > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+header a{
+   
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(58, 57, 57);
+    margin: 5px;
+    padding: 5px;
+    float: right;
+    background-color: rgb(219, 215, 143);
+    border: 2px solid rgb(219, 215, 143);
+    border-radius: 15px;
+    
+   
+}
+
+header a:hover{
+    transition: 5ms;
+    background-color: rgb(243, 240, 190);
+}
+
+
+
+
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+
+.product-box{
+    width: 250px;
+    max-width: 250px;
+    margin: 15px;
+    height: 450px;
+    max-height: 450px;
+
+     background-color: rgb(219, 215, 143);
+    border: 2px solid rgb(219, 215, 143);
+    border-radius: 15px;
+    
+   
+}
+
+.product-box img{
+    width: 250px;
+    margin: 0;
+    border-top-right-radius: inherit;
+    border-top-left-radius: inherit;
+}
+
+.product-box h3{
+   margin: 0;
+    display: block;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.product-box a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  
+    max-width: 100px;
+    padding: 5px;
+    color: #fafafa;
+     background-color: rgb(123, 120, 79);
+    border: 2px solid rgb(219, 215, 143);
+    border-radius: 15px;
+    
+}
+
+.product-box > a:hover{
+    transition:10ms;
+    color: rgb(62, 61, 61);
+  background-color: rgb(236, 232, 181);
+}
+
+
+.product-box > a.blue{
+      max-width: 150px;
+      background-color: rgb(85, 135, 135);
+    border: 2px solid rgb(143, 213, 219);
+    border-radius: 15px;
+    justify-content: center;
+    text-align: center;
+  
+    
+}
+
+.product-box p{
+    margin: 0;
+}
