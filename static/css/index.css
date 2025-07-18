@@ -4,6 +4,9 @@
        url('../fonts/BKoodakBold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
        url('../fonts/BKoodakBold.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
 }
+*{
+    transition: 200ms;
+}
 body{
     padding: 0;
     margin: 0;
@@ -43,9 +46,31 @@ header > div {
     
 }
 
+header div > form > input{
+    font-size: 16px;
+    font-weight: 300;
+    border-radius: 15px;
+    float: right;
+    font-family: b koodak;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid rgb(128, 128, 128);
+    
+   
+}
+
+header div > form{
+    display: inherit;
+    align-items: center;
+    position: relative;
+    
+}
+
+
 header a{
    
-    font-size: 20px;
+    font-size: 17px;
+    font-weight: 700;
     text-decoration: none;
     color: rgb(58, 57, 57);
     margin: 5px;
@@ -54,12 +79,13 @@ header a{
     background-color: rgb(219, 215, 143);
     border: 2px solid rgb(219, 215, 143);
     border-radius: 15px;
+    font-family: b koodak;
     
    
 }
 
 header a:hover{
-    transition: 5ms;
+   
     background-color: rgb(243, 240, 190);
 }
 
@@ -67,76 +93,109 @@ header a:hover{
 
 
 .products{
+    max-width: 700px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 0;
+    margin: auto;
 }
 
 
-.product-box{
-    width: 250px;
-    max-width: 250px;
+.product-box section{
+    max-width: 200px;
     margin: 15px;
-    height: 450px;
-    max-height: 450px;
-
-     background-color: rgb(219, 215, 143);
+    height: 430px;
+    background-color: rgb(219, 215, 143);
     border: 2px solid rgb(219, 215, 143);
     border-radius: 15px;
-    
-   
+  
 }
 
-.product-box img{
-    width: 250px;
+
+.price{
+    font-size: 15px;
+    font-weight: 500;
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+}
+
+
+
+
+.product-box section> img{
+    width: 200px;
+    height: 250px;
     margin: 0;
     border-top-right-radius: inherit;
     border-top-left-radius: inherit;
 }
 
-.product-box h3{
-   margin: 0;
+.product-box section h3{
+    margin: 0;
+    font-size: 16px;
     display: block;
     justify-content: center;
     text-align: center;
 
 }
 
-.product-box a {
+
+.add-to-cart-btn {
     text-decoration: none;
-    display: flex;
-    justify-content: center;
-    margin: auto;
-  
-    max-width: 100px;
     padding: 5px;
-    color: #fafafa;
-     background-color: rgb(123, 120, 79);
-    border: 2px solid rgb(219, 215, 143);
+    font-size: 12px;
+    font-weight: 400;
+    color: aliceblue;
+    background-color: rgb(9, 78, 39);
+    border: 2px solid rgb(4, 88, 59);
     border-radius: 15px;
-    
+    position: absolute;
+    display: flex;
+    font-family: b koodak;
+    top: 20px;
+    left: 20px;
+    opacity: 0;
 }
 
-.product-box > a:hover{
-    transition:10ms;
-    color: rgb(62, 61, 61);
-  background-color: rgb(236, 232, 181);
+.product-box{
+    position: relative;
+}
+
+.add-to-cart-btn:hover{
+    background-color: rgba(74, 228, 141, 0.574);
+
 }
 
 
-.product-box > a.blue{
-      max-width: 150px;
-      background-color: rgb(85, 135, 135);
-    border: 2px solid rgb(143, 213, 219);
-    border-radius: 15px;
-    justify-content: center;
-    text-align: center;
-  
-    
+.product-box:hover .add-to-cart-btn{
+    opacity: 1;
 }
 
-.product-box p{
+.product-box section > p{
     margin: 0;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+
+a{
+    display: flex;
+    align-items: center;
+}
+
+a > img{
+    width: 30px;
+    margin-left: 5px;
+}
+
+.tag{
+    display: flex;
+    align-items: center;
+}
+.tag img{
+    width: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
 }
