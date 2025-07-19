@@ -21,14 +21,15 @@
 
             <span class="tag-red"><img src="{{url_for('static',filename = 'theme_images/delivery.png')}}">ارسال رایگان</span>
             <span class="tag-blue"><img src="{{url_for('static',filename = 'theme_images/done.png')}}">ضمانت اصالت</span>
-             <span class="tag-red"><img src="{{url_for('static',filename = 'theme_images/pay.png')}}"> پرداخت در محل</span>
+            <span class="tag-red"><img src="{{url_for('static',filename = 'theme_images/pay.png')}}"> پرداخت در محل</span>
             <span class="tag-blue"><img src="{{url_for('static',filename = 'theme_images/credit-card.png')}}">پرداخت با تمامی کارتها</span>
+            <span class="tag-green"><img src="{{url_for('static',filename = 'theme_images/7.png')}}">هفت روز ضمانت تعویض</span>
             <br>
           
             <div class="price-box">
                 <div class="price">{{ product.price }}</div>
                 
-                <a class="add-to-cart-btn2" href="/add-to-cart?product_id={{ product.id }} "><img src="{{url_for('static', filename = 'theme_images/cart.png')}}"> افزودن به سبد خرید</a>
+                <a class="add-to-cart-btn2 icon" href="/add-to-cart?product_id={{ product.id }} "><img src="{{url_for('static', filename = 'theme_images/cart.png')}}"> افزودن به سبد خرید</a>
             
             </div>
         <br>

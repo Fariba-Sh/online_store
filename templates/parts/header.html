@@ -1,7 +1,9 @@
 <header>
         <section>
-            <img src="{{url_for('static', filename = 'images/images.png')}}" alt="fari online store">
-            <div id="header-menu">
+            <a href="/">
+                <img src="{{url_for('static', filename = 'images/images.png')}}" alt="fari online store">
+            </a>
+                <div id="header-menu">
                 <span id="header-menu-close-btn" onclick="javascript:change_header_menu(false)">X</span>
 
                 <form action="/" method="get">
@@ -9,9 +11,9 @@
                     
                     
                 </form>
-                <a href="/">صفحه ی اصلی</a>
-                <a href="/about">درباره ی ما</a>
-                <a href="/user/login">ورود/ثبت نام </a>
+                <a class="header-link" href="/user/cart">سبد خرید</a>
+                <a class="header-link"  href="/about">درباره ی ما</a>
+                <a class="header-link"  href="/user/login">ورود/ثبت نام </a>
                 
             </div>
 
