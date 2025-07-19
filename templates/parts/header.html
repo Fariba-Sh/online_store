@@ -1,7 +1,9 @@
 <header>
         <section>
             <img src="{{url_for('static', filename = 'images/images.png')}}" alt="fari online store">
-            <div>
+            <div id="header-menu">
+                <span id="header-menu-close-btn" onclick="javascript:change_header_menu(false)">X</span>
+
                 <form action="/" method="get">
                     <input type="search" name="search" value="{{ search if search !=None }}" placeholder=" &#x1F50E;جست و جو">
                     
@@ -12,5 +14,8 @@
                 <a href="/user/login">ورود/ثبت نام </a>
                 
             </div>
+
+
+            <img onclick="javascript:change_header_menu(true)" src="{{url_for('static', filename = 'theme_images/menu.png')}}" id="header-menu-btn">
         </section>
     </header>
