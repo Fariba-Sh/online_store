@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template,request
 from models.product import Product
+from sqlalchemy import func
 
 
 app = Blueprint("general", __name__)
@@ -21,7 +22,12 @@ def main():
 @app.route('/products/<int:id>/<name>')
 def product(id,name):
     product = Product.query.filter(Product.id == id).filter(Product.name == name).filter(Product.active == 1).first_or_404()
-    return render_template("product.html", product = product)
+    
+    # محصولات مشابه 
+    another_products = Product.query.filter(Product.active == 1).filter(Product.name.like(f'%{product.name[0:2]}%')).order_by(func.random()).limit(3).all()
+    
+    
+    return render_template("product.html", product = product , another_products = another_products)
 
 
 @app.route('/about')
