@@ -519,6 +519,10 @@ p{
     padding: 10px;
 }
 
+td.price{
+    font-weight:normal ;
+}
+
 
 @media (max-width:650px){
     header >section> div{
