@@ -524,6 +524,25 @@ td.price{
 }
 
 
+.red-btn{
+    text-decoration: none;
+    color: #c80606;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: transparent;
+    padding: 10px;
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid #e70000;
+    text-shadow:0px 1px 10px #c40606;
+    box-shadow:0px 1px 10px #b60000 ;
+}
+
+.red-btn:hover{
+    color: #ffffff;
+    background-color: #eb0000;
+}
+
 @media (max-width:650px){
     header >section> div{
         position: absolute;
