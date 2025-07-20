@@ -15,3 +15,14 @@ class Payment(db.Model):
     # usersهمون اسم جدوله!
     cart = db.relationship('Cart', backref = 'payments')
     # ارتباط یک به چند ( هر سبد خرید چند درگاه پرداخت داره)
+
+
+    def get_status_persian(self):
+        if self.status == 'pending':
+            return "در انتظار پرداخت"
+        
+        if self.status == 'success':
+            return "پرداخت شده"
+
+        if self.status == 'failed':
+            return "عدم موفقیت"

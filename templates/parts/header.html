@@ -6,6 +6,11 @@
                 <div id="header-menu">
                 <span id="header-menu-close-btn" onclick="javascript:change_header_menu(false)">X</span>
 
+                {% if request.endpoint.startswith("admin") %}
+                    <a class="header-link" href="/admin/dashboard">پنل مدیریت</a>
+                    <a class="header-link" href="/admin/dashboard/products">صفحه ی محصولات</a>
+
+                {% else %}
                 <form action="/" method="get">
                     <input type="search" name="search" value="{{ search if search !=None }}" placeholder=" &#x1F50E;جست و جو">
                     
@@ -18,6 +23,8 @@
                 {% else %}
                 <a class="header-link"  href="/user/login">ورود/ثبت نام </a>
                 {% endif %}
+
+            {% endif %}
             </div>
 
 
