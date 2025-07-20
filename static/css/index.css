@@ -409,19 +409,22 @@ table.cart td{
 /* نکته اگر اسپیس نذاریم تو پایینی میگرده هردو کلاس رو پیدا کنه */
 .cart .pay-btn{
     text-decoration: none;
-    color: rgb(197, 194, 194);
+    color: #38c328;
     font-size: 20px;
     float: left;
     border-radius: 10px;
-    background-color: rgb(10, 95, 34);
+    background-color: transparent;
     padding: 10px;
     display: inline-flex;
     align-items: center;
+    border: 2px solid #38c328;
+    text-shadow:0px 1px 10px #38c328;
+    box-shadow:0px 1px 10px #38c328 ;
 }
 
 .cart .pay-btn:hover{
-     background-color: rgb(59, 255, 115);
-     color: rgb(116, 115, 115);
+     background-color: #38c328;
+     color: white;
 }
 
 .cart .pay-btn > img{
@@ -509,6 +512,11 @@ table.cart td{
 }
 .simple-box h2 {
     text-align: right;
+}
+
+p{
+    text-align: justify;
+    padding: 10px;
 }
 
 
