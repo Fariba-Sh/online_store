@@ -9,6 +9,7 @@
     {% include 'parts/header.html' %}
 
     <section class="simple-box cart">
+      <h1>سبد خرید</h1>
         {% if cart != None and cart.cart_items|list|length > 0 %}
         <table class="cart">
           <tr>
@@ -44,7 +45,7 @@
             
             
             {% else %}
-                    سبد خرید خالی است
+                 <i style="display: block; text-align: center;">   سبد خرید خالی است</i>
             {% endif %}
 
     </section>

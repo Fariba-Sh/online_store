@@ -13,8 +13,11 @@
                 </form>
                 <a class="header-link" href="/user/cart">سبد خرید</a>
                 <a class="header-link"  href="/about">درباره ی ما</a>
+                {%if current_user.is_authenticated%}
+                <a class="header-link"  href="/user/dashboard">پنل کاربری</a>
+                {% else %}
                 <a class="header-link"  href="/user/login">ورود/ثبت نام </a>
-                
+                {% endif %}
             </div>
 
 
