@@ -1,34 +1,60 @@
 {% extends 'base.html' %}
 
 {% block header %}
- <title>ورود / ثبت نام کاربران</title>
+ <title>ورود / ثبت نام</title>
 {% endblock %}
 
 {% block body %}
 
-    <h2>user register</h2>
+   {% include 'parts/header.html' %}
+
+
+    <section class="simple-box" style="max-width: 290px; ;">
+        
+    <div id="login-box">
+        <h2>ورود</h2>
+    <form action="#" method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+        <input type="text" name="username" placeholder="نام کاربری">
+        <input type="password" name="password" placeholder="رمز عبور">
+        <input type="submit" value="ورود">
+    </form>
+    <span style="cursor: pointer;" onclick="javascript:show_register()">ثبت نام نکرده اید؟</span>
+    </div>
+
+    <div id="register-box">
+        <h2>ثبت نام</h2>
     <form action="#" method="post">
         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
         <input type="hidden" name="register" value="1">
-        <input type="text" name="username" placeholder="username">
-        <input type="password" name="password" placeholder="password">
-        <input type="number" name="phone" placeholder="phone">
-        <input type="text" name="address" placeholder="address">
-        <input type="submit">
+        <input type="text" name="username" placeholder="نام کاربری">
+        <input type="password" name="password" placeholder="رمز عبور">
+        <input type="number" name="phone" placeholder="شماره تلفن">
+        <textarea name="address" placeholder="آدرس دقیق"></textarea>
+        <input type="submit" value="ثبت نام">
     </form>
-    <br>
+    <span style="cursor: pointer;" onclick="javascript:show_login()">قبلا ثبت نام کرده اید؟</span>
+   
+    </div>
+    </section>
 
-    <h2>user login</h2>
-    <form action="#" method="post">
-        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
-        <input type="text" name="username" placeholder="username">
-        <input type="password" name="password" placeholder="password">
-        <input type="submit">
-    </form>
+   
+    <script>
+        const register_box = document.getElementById('register-box')
+        const login_box = document.getElementById('login-box')
 
-    {% for m in get_flashed_messages() %}
-        {{ m }}
-    {% endfor %}
+        const show_register = ()=>{
+            register_box.style.display = "block"
+            login_box.style.display = "none"
+        }
+
+        const show_login = ()=>{
+            register_box.style.display = "none"
+            login_box.style.display = "block"
+        }
+
+
+    </script>
 
 {% endblock %}
 
